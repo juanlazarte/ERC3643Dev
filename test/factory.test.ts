@@ -4,7 +4,7 @@ import { ethers } from 'hardhat';
 
 import { Event } from 'ethers';
 import OnchainID from '@onchain-id/solidity';
-import { deployFullSuiteFixture } from './fixtures/deploy-full-suite.fixture';
+import { deployFullSuiteFixture } from './fixtures/borradorInicial';
 
 describe('TREXFactory', () => {
   describe('.deployTREXSuite()', () => {

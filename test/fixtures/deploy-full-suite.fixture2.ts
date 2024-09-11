@@ -86,7 +86,7 @@ export async function deployFullSuiteFixture() {
     )
     .then(async (proxy) => ethers.getContractAt('IdentityRegistry', proxy.address));
 
-  const tokenOID = await deployIdentityProxy(identityImplementationAuthority.address, tokenIssuer.address, deployer);
+  const tokenOID = await deployIdentityProxy(identityImplementationAuthority.address, deployer.address, deployer);
   const tokenName = 'TREXDINO';
   const tokenSymbol = 'TREX';
   const tokenDecimals = BigNumber.from('0');
@@ -235,6 +235,35 @@ export async function deployFullSuiteFixture() {
     },
   };
 }
+
+// eslint-disable-next-line consistent-return
+async function main() {
+  try {
+    // Primero despliega la suite principal
+    const deployment = await deployFullSuiteFixture();
+
+    // Logueamos las direcciones de los contratos desplegados en ese momento cambiar de forma manual
+    console.log('Direcciones de los contratos desplegados con exito:');
+    console.log('agentManager Proxy address:', deployment.suite.agentManager.address);
+
+    return {
+      deployment,
+    };
+  } catch (error) {
+    console.error('Error en el despliegue:', error);
+    process.exit(1); // Termina el proceso si ocurre un error
+  }
+}
+
+main()
+  .then(() => {
+    console.log('Deployment completado con éxito.');
+    // Puedes hacer algo más con el resultado aquí si lo necesitas
+  })
+  .catch((error) => {
+    console.error('Error en el despliegue:', error);
+    process.exit(1);
+  });
 
 export async function deploySuiteWithModularCompliancesFixture() {
   const context = await loadFixture(deployFullSuiteFixture);

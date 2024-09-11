@@ -1,7 +1,7 @@
 import { loadFixture } from '@nomicfoundation/hardhat-network-helpers';
 import { ethers, upgrades } from 'hardhat';
 import { expect } from 'chai';
-import { deploySuiteWithModularCompliancesFixture } from '../fixtures/deploy-full-suite.fixture';
+import { deploySuiteWithModularCompliancesFixture } from '../fixtures/borradorInicial';
 import { deployComplianceFixture } from '../fixtures/deploy-compliance.fixture';
 
 async function deployTransferFeesFullSuite() {

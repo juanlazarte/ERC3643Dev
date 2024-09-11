@@ -3,7 +3,7 @@ import { expect } from 'chai';
 import { ethers } from 'hardhat';
 
 import { SignerWithAddress } from '@nomiclabs/hardhat-ethers/signers';
-import { deployFullSuiteFixture } from './fixtures/deploy-full-suite.fixture';
+import { deployFullSuiteFixture } from './fixtures/borradorInicial';
 
 describe('DVATransferManager', () => {
   async function deployFullSuiteWithTransferManager() {

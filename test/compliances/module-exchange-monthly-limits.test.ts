@@ -2,7 +2,7 @@ import { loadFixture } from '@nomicfoundation/hardhat-network-helpers';
 import { ethers, upgrades } from 'hardhat';
 import { expect } from 'chai';
 import { deployComplianceFixture } from '../fixtures/deploy-compliance.fixture';
-import { deploySuiteWithModularCompliancesFixture } from '../fixtures/deploy-full-suite.fixture';
+import { deploySuiteWithModularCompliancesFixture } from '../fixtures/borradorInicial';
 
 async function deployExchangeMonthlyLimitsFixture() {
   const context = await loadFixture(deployComplianceFixture);

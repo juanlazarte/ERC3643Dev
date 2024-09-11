@@ -5,7 +5,7 @@ import {
   deployFullSuiteFixture,
   deploySuiteWithModularCompliancesFixture,
   deploySuiteWithModuleComplianceBoundToWallet,
-} from './fixtures/deploy-full-suite.fixture';
+} from './fixtures/borradorInicial';
 
 describe('ModularCompliance', () => {
   describe('.init', () => {
